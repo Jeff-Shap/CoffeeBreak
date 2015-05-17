@@ -1,4 +1,4 @@
 class CoffeeShop < ActiveRecord::Base
-  has_one :user, through: :order_profile
+  has_many :order_profiles
 
 end
