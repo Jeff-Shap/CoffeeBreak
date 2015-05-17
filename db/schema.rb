@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517190747) do
+ActiveRecord::Schema.define(version: 20150517200923) do
 
   create_table "coffee_shops", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20150517190747) do
     t.string   "name"
     t.string   "password_digest"
     t.string   "allergy"
-    t.integer  "order_profile_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -67,7 +66,6 @@ ActiveRecord::Schema.define(version: 20150517190747) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["order_profile_id"], name: "index_users_on_order_profile_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
