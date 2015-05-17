@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'send_text/index'
+
   devise_for :users
   get 'welcome/index'
 
