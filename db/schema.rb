@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517170825) do
+ActiveRecord::Schema.define(version: 20150517190747) do
 
   create_table "coffee_shops", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -32,8 +32,10 @@ ActiveRecord::Schema.define(version: 20150517170825) do
     t.string   "message"
     t.string   "phone"
     t.string   "delivery_address"
+    t.integer  "User_id"
   end
 
+  add_index "order_profiles", ["User_id"], name: "index_order_profiles_on_User_id"
   add_index "order_profiles", ["coffee_shop_id"], name: "index_order_profiles_on_coffee_shop_id"
 
   create_table "orders", force: :cascade do |t|
