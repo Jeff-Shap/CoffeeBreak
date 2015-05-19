@@ -13,4 +13,6 @@
  *= require_self
  */
 
-@import 'global.css'
+@import 'global.css';
+@import 'welcome.css';
+@import 'buttons.css.scss';

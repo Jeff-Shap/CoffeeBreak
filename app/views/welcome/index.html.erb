@@ -1,27 +1,23 @@
 <div id="banner">
-  <div class="banner-content">
-    <h1>
-      Re-Up
+  <div class="jumbotron container-fluid text-center">
+    <h1 class="coffeebreak">
+      CoffeeBreak
     </h1>
     <p>
       Get your fix.
     </p>
+    <%= link_to "Sign Up", new_user_registration_path, class: "button-hover", data: { text: "SIGN UP" } %>
 
-      <%= link_to new_user_registration_path, :class => "button", :class => "btn-wrapper" do %>
-        <button>
-          <%= "Sign Up" %>
-        </button>
-      <% end %>
   </div>
 </div>
 
-<div id="testimonial">
-  <div class="wrapper">
-    <p class="quote">
-      There's no line at Panther Coffee!
-    </p>
-    <p class="name">
-      - Nobody ever.
-    </p>
+  <div class="well">
+    <blockquote class="text-center">
+      <p>
+        "There's a short line at <strong>Panther Coffee</strong>!"
+      </p>
+      <footer>
+        Said <cite title="Source Title">no one ever</cite>
+      </footer>
+    </blockquote>
   </div>
-</div>

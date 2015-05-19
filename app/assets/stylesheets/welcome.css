@@ -1,0 +1,29 @@
+.welcome .jumbotron {
+  background-color: #333333;
+  color: #EEEEEE;
+  min-height: 700px;
+  background-image: url("outside-panther.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right top;
+}
+.coffeebreak {
+  padding-top: 18%;
+  color: #fcfc95;
+}
+h1:hover {
+  color: #fcfc95;
+}
+.well {
+  background-color: #fcfc95;
+  border: none;
+  max-width: 400px;
+  max-width:390px;
+  color: #5c4c40;
+  text-align: center;
+  border-left: 5px solid #897860;
+  padding-left: 5px;
+  margin:0 auto;
+  width:auto;
+  display:table
+}

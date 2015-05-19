@@ -3,10 +3,12 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+
 # Use sqlite3 as the database for Active Record
 group :test do
   gem 'sqlite3'
 end
+
 group :production do
   gem 'pg'
 end
@@ -52,3 +54,7 @@ end
   gem 'simple_form', '~> 3.1.0'
   gem 'devise', '~> 3.4.1'
   gem 'better_errors', '~> 2.1.1'
+
+group :assets do
+  gem 'compass-rails'
+end

@@ -7,9 +7,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <header class="header-inner">
-    <nav>
+<body class="<%=params[:controller]%>">
+  <header class="header-inner navbar navbar-default navbar-fixed-top">
+    <nav class="pull-right nav-pad">
       <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       <% else %>
@@ -22,13 +22,11 @@
 
 <%= yield %>
 
-  <footer>
-    <div class="text-center">
-      <%= link_to image_tag('logo.png') %>
+  <footer class="footer-inner">
+    <div class="text-center ftr-logo">
+      <%= image_tag('logo-coffee.svg', class: "resize logo-coffee shadow")  %>
     </div>
-    <p class="text-center">The Re-Up Team</p>
   </footer>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 </body>
 </html>
