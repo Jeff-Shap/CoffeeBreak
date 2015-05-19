@@ -13,9 +13,11 @@ class ReceiveTextController < ApplicationController
 
     @client = Twilio::REST::Client.new account_sid, auth_token
 
-    @client.account.sms.messages.list.each do |sms|
-      puts sms
-    end
+    @order_message =  @client.account.sms.messages.list({}).each do |sms|
+                        puts sms.to
+                      end
+
+    @sms = @client.account.sms.messages.get("SM1d2c461018a3245defd8589527bd8c98")
 
   end
 
