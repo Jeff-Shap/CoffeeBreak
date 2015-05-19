@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517170825) do
+ActiveRecord::Schema.define(version: 20150519191033) do
+
+  create_table "businesses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+  end
 
   create_table "coffee_shops", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -26,22 +34,32 @@ ActiveRecord::Schema.define(version: 20150517170825) do
   create_table "order_profiles", force: :cascade do |t|
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "profile_name"
-    t.integer  "coffee_shop_id"
-    t.string   "coffee"
-    t.string   "message"
-    t.string   "phone"
-    t.string   "delivery_address"
+    t.integer  "user_id"
+    t.integer  "business_id"
+    t.string   "orderdescription"
+    t.string   "name"
   end
 
-  add_index "order_profiles", ["coffee_shop_id"], name: "index_order_profiles_on_coffee_shop_id"
+  add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id"
+  add_index "order_profiles", ["user_id"], name: "index_order_profiles_on_user_id"
 
   create_table "orders", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "date"
-    t.string   "time"
-    t.string   "delivery_status"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "order_profile_id"
+    t.integer  "runner_id"
+    t.string   "status"
+  end
+
+  add_index "orders", ["order_profile_id"], name: "index_orders_on_order_profile_id"
+  add_index "orders", ["runner_id"], name: "index_orders_on_runner_id"
+
+  create_table "runners", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
   end
 
   create_table "users", force: :cascade do |t|
