@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'receive_text/index'
+<<<<<<< HEAD
 
-  get 'send_text/index'
+  get 'welcome/index'
+>>>>>>> 81089a0e4084c1e4882543b9293b79cd8fbaa448
 
   devise_for :users
   get 'welcome/index'
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

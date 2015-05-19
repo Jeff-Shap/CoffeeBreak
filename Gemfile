@@ -30,7 +30,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -49,7 +52,9 @@ group :development, :test do
   gem 'spring'
 end
 
+<<<<<<< HEAD
   gem 'simple_form', '~> 3.1.0'
   gem 'devise', '~> 3.4.1'
   gem 'better_errors', '~> 2.1.1'
   gem 'twilio-ruby', '~> 4.1.0'
+>>>>>>> 81089a0e4084c1e4882543b9293b79cd8fbaa448
