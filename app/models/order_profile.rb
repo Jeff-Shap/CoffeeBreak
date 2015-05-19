@@ -1,4 +1,4 @@
 class OrderProfile < ActiveRecord::Base
-  has_one :coffee_shop
+  has_one :business
   has_many :orders
 end
