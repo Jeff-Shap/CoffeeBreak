@@ -11,18 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519181540) do
+ActiveRecord::Schema.define(version: 20150519185338) do
 
   create_table "businesses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
   end
 
   create_table "order_profiles", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "business_id"
     t.integer  "user_id"
+    t.integer  "business_id"
   end
 
   add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id"
@@ -34,16 +37,19 @@ ActiveRecord::Schema.define(version: 20150519181540) do
     t.string   "date"
     t.string   "time"
     t.string   "delivery_status"
-    t.integer  "OrderProfile_id"
-    t.integer  "Runner_id"
+    t.integer  "order_profile_id"
+    t.integer  "runner_id"
   end
 
-  add_index "orders", ["OrderProfile_id"], name: "index_orders_on_OrderProfile_id"
-  add_index "orders", ["Runner_id"], name: "index_orders_on_Runner_id"
+  add_index "orders", ["order_profile_id"], name: "index_orders_on_order_profile_id"
+  add_index "orders", ["runner_id"], name: "index_orders_on_runner_id"
 
   create_table "runners", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
   end
 
   create_table "users", force: :cascade do |t|
