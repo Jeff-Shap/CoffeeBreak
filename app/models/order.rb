@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
   belongs_to :order_profile
-  has_one :runner
+  belongs_to :runner
+  belongs_to :user through: :order_profile
 end
