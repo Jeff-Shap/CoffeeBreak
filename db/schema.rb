@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519190520) do
+ActiveRecord::Schema.define(version: 20150519191033) do
 
   create_table "businesses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150519190520) do
     t.integer  "user_id"
     t.integer  "business_id"
     t.string   "orderdescription"
+    t.string   "name"
   end
 
   add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id"
