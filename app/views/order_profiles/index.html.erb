@@ -12,6 +12,8 @@
   <tbody>
     <% @order_profiles.each do |order_profile| %>
       <tr>
+        <td><%= order_profile.name %></td>
+        <td><%= order_profile.orderdescription %></td>
         <td><%= link_to 'Show', order_profile %></td>
         <td><%= link_to 'Edit', edit_order_profile_path(order_profile) %></td>
         <td><%= link_to 'Destroy', order_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

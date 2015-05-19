@@ -24,6 +24,7 @@ class OrderProfilesController < ApplicationController
   # POST /order_profiles
   # POST /order_profiles.json
   def create
+    puts "stuff #{order_profile_params}"
     @order_profile = OrderProfile.new(order_profile_params)
 
     respond_to do |format|
@@ -69,6 +70,7 @@ class OrderProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_profile_params
-      params[:order_profile]
+      params[:order_profile].permit(:orderdescription, :name)
+
     end
 end
