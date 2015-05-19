@@ -11,30 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517170825) do
+ActiveRecord::Schema.define(version: 20150519181540) do
 
-  create_table "coffee_shops", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "data_input_method"
-    t.string   "name"
+  create_table "businesses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "order_profiles", force: :cascade do |t|
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "profile_name"
-    t.integer  "coffee_shop_id"
-    t.string   "coffee"
-    t.string   "message"
-    t.string   "phone"
-    t.string   "delivery_address"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "business_id"
+    t.integer  "user_id"
   end
 
-  add_index "order_profiles", ["coffee_shop_id"], name: "index_order_profiles_on_coffee_shop_id"
+  add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id"
+  add_index "order_profiles", ["user_id"], name: "index_order_profiles_on_user_id"
 
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at",      null: false
@@ -42,6 +34,16 @@ ActiveRecord::Schema.define(version: 20150517170825) do
     t.string   "date"
     t.string   "time"
     t.string   "delivery_status"
+    t.integer  "OrderProfile_id"
+    t.integer  "Runner_id"
+  end
+
+  add_index "orders", ["OrderProfile_id"], name: "index_orders_on_OrderProfile_id"
+  add_index "orders", ["Runner_id"], name: "index_orders_on_Runner_id"
+
+  create_table "runners", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
