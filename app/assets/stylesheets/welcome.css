@@ -1,4 +1,21 @@
-.welcome .jumbotron {
+@import url(http://fonts.googleapis.com/css?family=Cookie);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,200);
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+blockquote p {
+  color: #fcfc95;
+}
+.resize {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transform: scale(0.9, 0.9);
+  -ms-transform: scale(0.9, 0.9);
+  -webkit-transform: scale(0.9, 0.9);
+}
+.jumbotron {
   background-color: #333333;
   color: #EEEEEE;
   min-height: 700px;
@@ -10,10 +27,17 @@
 .coffeebreak {
   padding-top: 18%;
   color: #fcfc95;
-  font-family: Pacifico;
+  font-family: 'Cookie', cursive;
+}
+.jumbotron h1 {
+  font-size: 15vw;
 }
 h1:hover {
   color: #fcfc95;
+}
+.jumbotron p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.8vw;
 }
 .well {
   background-color: #fcfc95;
@@ -27,4 +51,13 @@ h1:hover {
   margin:0 auto;
   width:auto;
   display:table
+}
+.cookie {
+  font-family: 'Cookie', cursive;
+  font-size: 1.5em;
+  color: #fcfc95;
+}
+.instructions {
+  color: #EEEEEE;
+  font-size: 1.5em;
 }
