@@ -14,7 +14,14 @@ class OrderProfilesController < ApplicationController
 
   # GET /order_profiles/new
   def new
+    @business_names = []
+    Business.find_each do |b|
+      @business_names << [b.name, b.id]
+    end
+
     @order_profile = OrderProfile.new
+    
+
   end
 
   # GET /order_profiles/1/edit
@@ -24,7 +31,9 @@ class OrderProfilesController < ApplicationController
   # POST /order_profiles
   # POST /order_profiles.json
   def create
+    puts "stuff #{order_profile_params}"
     @order_profile = OrderProfile.new(order_profile_params)
+
 
     respond_to do |format|
       if @order_profile.save
@@ -61,6 +70,10 @@ class OrderProfilesController < ApplicationController
     end
   end
 
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order_profile
@@ -69,6 +82,7 @@ class OrderProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_profile_params
-      params[:order_profile]
+      params[:order_profile].permit(:orderdescription, :name, :business, :business_id)
+
     end
 end
