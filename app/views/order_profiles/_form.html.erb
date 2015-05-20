@@ -12,7 +12,11 @@
   <% end %>
   
   <%= f.input :name %>
+  
   <%= f.input :orderdescription %>
+
+  <%= f.select :business_id, options_for_select(@business_names)%>
+
 
   <div class="actions">
     <%= f.submit %>

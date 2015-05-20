@@ -9,10 +9,17 @@
     </tr>
   </thead>
 
+<tr>
+        <td>Name</td>
+        <td>Business</td>
+        <td>Description</td>
+        <td></td>
+      </tr>
   <tbody>
     <% @order_profiles.each do |order_profile| %>
       <tr>
         <td><%= order_profile.name %></td>
+        <td><%= order_profile.business.try(:name) %></td>
         <td><%= order_profile.orderdescription %></td>
         <td><%= link_to 'Show', order_profile %></td>
         <td><%= link_to 'Edit', edit_order_profile_path(order_profile) %></td>

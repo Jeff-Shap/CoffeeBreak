@@ -21,16 +21,6 @@ ActiveRecord::Schema.define(version: 20150519191033) do
     t.string   "phone"
   end
 
-  create_table "coffee_shops", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "data_input_method"
-    t.string   "name"
-  end
-
   create_table "order_profiles", force: :cascade do |t|
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
