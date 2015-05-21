@@ -14,10 +14,17 @@ class OrderProfilesController < ApplicationController
 
   # GET /order_profiles/new
   def new
+
     @business_names = []
     Business.find_each do |b|
       @business_names << [b.name, b.id]
     end
+
+    @product_names = []
+    Product.find_each do |p|
+      @product_names << [p.name, p.business_id]
+    end
+
 
     @order_profile = OrderProfile.new
     
