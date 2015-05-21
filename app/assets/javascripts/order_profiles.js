@@ -13,13 +13,20 @@
 
 
 //Grabs business_id when business is chosen from drop-down
-var main = function product_options() {
-  $('#biz-select').change(function() {
-  selected_business_id = $(this).val();
-  console.log(selected_business_id);
+// var main = function product_options() {
+//   $('#biz-select').change(function() {
+//   selected_business_id = $(this).val();
+//   console.log(selected_business_id);
 
-});
-};
+// });
+// };
+
+// var main = function() {
+//   $('.bizbutton').click(function() 
+//     { console.log('click');
+//     $(this).next.toggle();
+//   });
+// };
 
 
-$(document).ready(main);
+// $(document).ready(main);
