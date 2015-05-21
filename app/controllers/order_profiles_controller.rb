@@ -33,6 +33,11 @@ class OrderProfilesController < ApplicationController
       @product_names << [p.name, [p.id, p.business_id]]
     end
 
+    @product_json = []
+    Product.find_each do |j|
+      @product_json << j.to_json
+    end
+
 
     @order_profile = OrderProfile.new
     
@@ -46,7 +51,7 @@ class OrderProfilesController < ApplicationController
   # POST /order_profiles
   # POST /order_profiles.json
   def create
-    puts "stuff #{order_profile_params}"
+ 
     @order_profile = OrderProfile.new(order_profile_params)
 
 

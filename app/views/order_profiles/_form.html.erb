@@ -13,11 +13,30 @@
   
   <%= f.input :name %>
 
+  <table>
+    <thead>
+      
+    </thead>
+    <tbody>
+      <tr>
+        <select>
+          <% Business.find_each do |x| %>
+          <option> <%=x.name%> </option>
+        </select>
+      </tr>
+      <tr>
+          <%= Product.find_each do |p| %>
+          <% if p.business_id == x.id %>
+          <td>
+            <%= p.name %>
+          </td>
+          <% end %>
+          <% end %>
+      </tr>
+    </tbody>
+    <% end %>
 
-
-  <%= f.select :business_id, options_for_select(@business_names), {}, :id => "biz-select" %>
-
-  <%= f.select :product_id, options_for_select(@product_names), {}, :id => "prod-select" %>
+ 
 
   <%= f.input :orderdescription, :label => "Special Instructions" %>
 
