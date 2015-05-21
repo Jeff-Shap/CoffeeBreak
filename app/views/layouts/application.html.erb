@@ -10,6 +10,8 @@
 <body class="<%=params[:controller]%>">
   <header class="header-inner navbar navbar-default navbar-fixed-top">
     <nav class="pull-right nav-pad">
+      <%= link_to "Home", root_path, class: "nav-pad" %>
+      <%= link_to "About Us", root_path, class: "nav-pad" %>
       <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       <% else %>

@@ -43,7 +43,7 @@ nav a {
   border: none;
 }
 .nav-pad {
-  padding-right: 1%;
+  padding-right: 8px;
   padding-top: 10px;
   text-transform: uppercase;
 }
