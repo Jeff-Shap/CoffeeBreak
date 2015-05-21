@@ -13,8 +13,11 @@
   
   <%= f.input :name %>
 
+
+
   <%= f.select :business_id, options_for_select(@business_names), {}, :id => "biz-select" %>
 
+  <%= f.select :product_id, options_for_select(@product_names), {}, :id => "prod-select" %>
 
   <%= f.input :orderdescription, :label => "Special Instructions" %>
 

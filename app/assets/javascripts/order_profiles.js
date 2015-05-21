@@ -17,8 +17,8 @@ var main = function product_options() {
   $('#biz-select').change(function() {
   selected_business_id = $(this).val();
   console.log(selected_business_id);
-  
-  });
+
+});
 };
 
 
