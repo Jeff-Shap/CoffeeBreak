@@ -13,9 +13,15 @@
   
   <%= f.input :name %>
 
-  <%= f.select :business_id, options_for_select(@business_names), {}, :id => "choose-business" %>
-  
-  <%= f.select :product_id, options_for_select(@product_names) %>
+  <%= form_tag users_path, {:method => :get, :class => "users_search_form"} do %>
+      <%= select_tag :business_id, options_from_collection_for_select(Business.all, "id", "name"), :prompt => "Select a Business" %>
+      <%= select_tag :product_id, options_from_collection_for_select(Product.all, "id", "name", "business_id"),
+                     "data-option-dependent" => true,
+                     "data-option-observed" => "business_id",
+                     "data-option-url" => "/specialization_types/:specialization_type_id:/specializations.json",
+                     "data-option-key-method" => :id,
+                     "data-option-value-method" => :name %>
+  <% end %>
 
   <%= f.input :orderdescription, :label => "Special Instructions" %>
 

@@ -3,6 +3,14 @@ class OrderProfilesController < ApplicationController
 
   # GET /order_profiles
   # GET /order_profiles.json
+
+  def specializations
+  specialization_type = Business.find(params[:id])
+    respond_to do |format|
+      format.json { render :json => Business.products }
+    end
+  end
+
   def index
     @order_profiles = OrderProfile.all
   end
@@ -22,7 +30,7 @@ class OrderProfilesController < ApplicationController
 
     @product_names = []
     Product.find_each do |p|
-      @product_names << [p.name, p.business_id]
+      @product_names << [p.name, [p.id, p.business_id]]
     end
 
 
