@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520200329) do
+ActiveRecord::Schema.define(version: 20150520202804) do
 
   create_table "businesses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -21,16 +21,6 @@ ActiveRecord::Schema.define(version: 20150520200329) do
     t.string   "phone"
   end
 
-  create_table "coffee_shops", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "data_input_method"
-    t.string   "name"
-  end
-
   create_table "order_profiles", force: :cascade do |t|
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -38,9 +28,11 @@ ActiveRecord::Schema.define(version: 20150520200329) do
     t.integer  "business_id"
     t.string   "orderdescription"
     t.string   "name"
+    t.integer  "product_id"
   end
 
   add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id"
+  add_index "order_profiles", ["product_id"], name: "index_order_profiles_on_product_id"
   add_index "order_profiles", ["user_id"], name: "index_order_profiles_on_user_id"
 
   create_table "orders", force: :cascade do |t|

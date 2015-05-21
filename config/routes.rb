@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get "specialization_types/:specialization_type_id/specializations" => "application#specializations", :as => "specializations", :format => :json
 
   get 'welcome/index'
 
