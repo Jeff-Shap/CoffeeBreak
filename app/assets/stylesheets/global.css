@@ -16,16 +16,19 @@ nav a {
   font-weight: 200;
   font-family: 'Raleway', sans-serif;
 }
+.footer {
+  bottom: 0px;
+  width: 100%;
+  max-height: 60px;
+}
 .footer-inner {
   background-color: #333333;
-/*  border-top: 2px solid #141414;*/
+  border-top: 1px solid #141414;
   overflow: hidden;
-  max-height: 200px;
-  padding-bottom: 1%;
 }
 .footer-inner p {
   color: #EEEEEE;
-  padding-top: 2em;
+  padding-top: 1em;
   text-shadow: 1px 1px 0px #141414;
   text-transform: uppercase;
 }
@@ -36,9 +39,11 @@ nav a {
   padding-right: 1%;
   padding-top: 10px;
   text-transform: uppercase;
-
 }
 a:hover {
   text-decoration: none;
   color: #fcfc95;
+}
+.steps {
+  display: inline-block;
 }

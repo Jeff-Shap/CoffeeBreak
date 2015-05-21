@@ -1,0 +1,15 @@
+.reg-form {
+  max-width: 400px;
+}
+.reg-body {
+  padding-top: 10vw;
+  color: #EEEEEE;
+}
+.signup {
+  color: #fcfc95;
+}
+.form-align{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
