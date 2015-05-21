@@ -28,5 +28,23 @@
 //   });
 // };
 
+// var main = function() {
+//   $('.selected_product').click(function() 
+//     { console.log($(this).next().val())};
+//     );
+// };
 
-// $(document).ready(main);
+
+var main = function(){
+
+  $('.selected_product').click(function(){
+
+    var printMe = $(this).next().val();
+
+    console.log(printMe);
+
+  })
+
+};
+
+$(document).ready(main);
