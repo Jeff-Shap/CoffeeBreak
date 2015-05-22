@@ -91,3 +91,9 @@ body {
   display: inline-block;
   color: #EEEEEE;
 }
+.notice{
+  color: #c0392b;
+}
+.alert{
+  color: #c0392b;
+}

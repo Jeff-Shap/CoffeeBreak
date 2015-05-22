@@ -34,12 +34,12 @@
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
          <% else %>
             <%= link_to "Log In", new_user_session_path, class: "" %>
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
           <% end %>
         </li>
       </ul>
     </div><!--/.nav-collapse -->
+      <p class="notice pull-right"><%= notice %></p>
+      <p class="alert pull-right"><%= alert %></p>
   </div>
 </nav>
 
