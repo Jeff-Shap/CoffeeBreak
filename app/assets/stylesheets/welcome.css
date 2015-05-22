@@ -77,15 +77,11 @@ h1:hover {
   font-size: 1.5em;
 }
 #how-it-works-row {
-  background: #FFEA9E;
   position: relative;
   z-index: 300;
 }
 .lander-row {
-  padding-top: 30px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .circle {
   border-radius: 50%;
@@ -115,11 +111,9 @@ h1:hover {
   margin-right: auto;
 }
 .reup {
-  background-image: url("reup.png");
-  position: absolute;
-  left: 26px;
-  top: 53px;
-  width: 300px;
-  height: 165px;
-  z-index: 1;
+ position: absolute;
+ top: -120px;
+ max-width: 100px;
+ padding-right: 10px;
+ right: 0;
 }
