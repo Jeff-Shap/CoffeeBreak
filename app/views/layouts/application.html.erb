@@ -3,15 +3,19 @@
 <head>
   <title> CoffeeBreak | Get your fix.</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%=params[:controller]%>">
 
+
+
   <!-- Fixed navbar -->
 <nav class="header-inner navbar navbar-default navbar-fixed-top">
-  <div class="container">
+  <div class="container" id="tempid"> <!-- added tempid for slight pre-reg css edits -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -23,12 +27,12 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse nav-pad-right controls">
       <ul class="nav navbar-nav navbar-right nav-pad-right">
-        <li><%= link_to "Home", root_path, class: "" %></li>
-        <li><%= link_to "About Us", root_path, class: "" %></li>
+      <li><%= link_to "Home", root_path, class: "" %></li>
+      <li><%= link_to "About Us", root_path, class: "" %></li>
         <li>
           <% if user_signed_in? %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          <% else %>
+         <% else %>
             <%= link_to "Log In", new_user_session_path, class: "" %>
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
@@ -39,13 +43,15 @@
   </div>
 </nav>
 
+
+
 <%= yield %>
 
-  <footer class="footer footer-inner ftr-contain">
+<!--   <footer class="footer footer-inner ftr-contain">
     <div class="container">
       <p class="text-center">THE RE-UP TEAM</p>
     </div>
-  </footer>
+  </footer> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

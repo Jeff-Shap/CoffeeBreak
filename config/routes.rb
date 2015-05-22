@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :users
 
   authenticated :user do
-    root 'users#index', as: "authenticated_root"
+    ##REROUTED ROOT FROM 'USER#INDEX' FOR PRE-REGISTERATION
+    root 'welcome#index', as: "authenticated_root"
   end
 
   root 'welcome#index'
