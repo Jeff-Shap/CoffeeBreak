@@ -16,4 +16,6 @@
 @import 'global.css';
 @import 'welcome.css';
 @import 'buttons.css.scss';
-@import 'new_registration.css'
+@import 'new_registration.css';
+@import url(https://fonts.googleapis.com/css?family=Cookie);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200);

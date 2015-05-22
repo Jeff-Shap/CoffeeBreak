@@ -1,11 +1,25 @@
-@import url(http://fonts.googleapis.com/css?family=Cookie);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,200);
-
 body {
   font-family: 'Raleway', sans-serif;
 }
 blockquote p {
   color: #fcfc95;
+}
+.divider{
+  border-top: 1px solid #333333;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+.divider-bottom{
+  border-top: 1px solid #333333;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 .resize {
   display: block;
@@ -61,4 +75,51 @@ h1:hover {
 .instructions {
   color: #EEEEEE;
   font-size: 1.5em;
+}
+#how-it-works-row {
+  background: #FFEA9E;
+  position: relative;
+  z-index: 300;
+}
+.lander-row {
+  padding-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.circle {
+  border-radius: 50%;
+}
+#how-it-works-row .circle-number {
+  background: #000;
+  color: #eeeeee;
+  vertical-align: middle;
+  font-size: 20px;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+  height: auto;
+}
+#how-it-works-row .how-it-works-phone {
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reup {
+  background-image: url("reup.png");
+  position: absolute;
+  left: 26px;
+  top: 53px;
+  width: 300px;
+  height: 165px;
+  z-index: 1;
 }

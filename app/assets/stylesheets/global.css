@@ -1,6 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Cookie);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,200);
-
 body {
   background: #b79c7b;
   background: -moz-linear-gradient(top, #b79c7b 0%, #877464 76%, #877464 100%);
@@ -52,8 +49,8 @@ body {
 .navbar-default{
   border: none;
 }
-.nav-pad-right {
-  margin-right: -130px;
+.nav-pad-right{
+  margin-right: auto;
   text-transform: uppercase;
 }
 .logo-small{

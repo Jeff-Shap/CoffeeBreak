@@ -10,15 +10,50 @@
   </div>
 </div>
 
-<div>
-  <p class="instructions text-center">
-    How <span class="cookie">CoffeeBreak</span> Works
-  </p>
-  <p class="instructions text-center">
-    Step 1:
-  </p>
-  <div class="text-center">
-    <%= image_tag('push-logo.svg', class: "")  %>
+<div id="how-it-works-row" class="lander-row">
+  <div class="container">
+    <img src="" style="position:absolute;top:-230px;max-width:300px;right:0;" class="coffee-pushing-gif img-responsive hidden-xs">
+    <div class="row">
+      <h3 class="text-center">
+        HOW IT WORKS
+      </h3>
+      <br>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="circle circle-number text-center">
+          1
+        </div>
+        <br>
+        <%= image_tag('gear.png', class: "img-responsive how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Sign up and create an order profile.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="circle circle-number text-center">2
+        </div>
+        <br>
+        <%= image_tag('logo-coffee.png', class: "img-responsive how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Push our magical coffee button!
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="circle circle-number text-center">
+          3
+        </div>
+        <br>
+        <%= image_tag('logistics.png', class: "img-responsive how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Your coffee shows up at your office, home, or event. You can even include tip!
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 

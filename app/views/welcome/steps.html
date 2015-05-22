@@ -1,0 +1,86 @@
+<div id="pfp-how-it-works-row" class="pfp-lander-row">
+  <div class="container">
+    <img src="" style="position:absolute;top:-230px;max-width:300px;right:0;" class="pfp-pizza-pushing-gif img-responsive hidden-xs">
+    <div class="row">
+      <h3 class="text-center">
+        HOW IT WORKS
+      </h3>
+      <br>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="pfp-circle pfp-circle-number text-center">
+          1
+        </div>
+        <br>
+        <%= image_tag('gear.png', class: "img-responsive pfp-how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Sign up and create an order profile.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="pfp-circle pfp-circle-number text-center">2
+        </div>
+        <br>
+        <%= image_tag('logo-coffee.png', class: "img-responsive pfp-how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Push our magical coffee button!
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="pfp-circle pfp-circle-number text-center">
+          3
+        </div>
+        <br>
+        <%= image_tag('logistics.png', class: "img-responsive pfp-how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Your coffee shows up at your office, home, or event. You can even include tip!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+#pfp-how-it-works-row {
+  background: #FFEA9E;
+  position: relative;
+  z-index: 300;
+}
+.pfp-lander-row {
+  padding-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pfp-circle {
+  border-radius: 50%;
+}
+#pfp-how-it-works-row .pfp-circle-number {
+  background: #000;
+  color: #fff;
+  vertical-align: middle;
+  font-size: 20px;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+#pfp-how-it-works-row .pfp-how-it-works-phone {
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
