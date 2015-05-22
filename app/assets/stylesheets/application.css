@@ -15,7 +15,7 @@
 
 @import 'global.css';
 @import 'welcome.css';
-@import 'buttons.css';
+@import 'buttons.css.scss';
 @import 'new_registration.css';
 
 #tempflash {
