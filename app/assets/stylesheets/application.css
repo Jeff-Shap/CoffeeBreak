@@ -17,10 +17,9 @@
 @import 'welcome.css';
 @import 'buttons.css.scss';
 @import 'new_registration.css';
-<<<<<<< HEAD
 @import url(https://fonts.googleapis.com/css?family=Cookie);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,200);
-=======
+
 
 #tempflash {
   width: 75%;
@@ -47,14 +46,14 @@
 
 @media screen and (min-width: 800px) {
   #tempflash {
-    font-size: 2em; 
+    font-size: 2em;
   }
 }
 
 @media screen and (max-width: 460px) {
   #tempflash {
     bottom: 670px;
-    font-size: 0.8em; 
+    font-size: 0.8em;
   }
 }
 
