@@ -1,0 +1,26 @@
+var products = ();
+
+<% for product in @products -%>
+  states.push(new Array(<%= product.business_id %>, "<%=h product.name %>", <%= product.id %>));
+<% end %>
+
+function businessSelected() {
+  business_id = $('biz-select').getValue();
+  options = $('prod-select').options;
+  options.length = 1;
+  products.each(function(product) {
+    if (product[1] == business_id) {
+      options[options.length] = new Option(product[1], product[2]);
+    }
+  });
+  if (options.length == 1) {
+    $('product_field').hide();
+  } else {
+    $('state_field').show();
+  }
+}
+
+$(document).ready(function() {
+  $('product_field').hide();
+  $('biz-select').observe('change', businessSelected);
+});

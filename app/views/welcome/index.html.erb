@@ -1,3 +1,5 @@
+
+
 <div id="banner">
   <div class="jumbotron container-fluid text-center">
     <h1 class="coffeebreak">
@@ -6,21 +8,42 @@
     <p>
       Get your fix.
     </p>
-    <%= link_to "Sign Up", new_user_registration_path, class: "button-hover", data: { text: "SIGN UP" } %>
+    
+    <%= link_to 'SIGN-UP', new_user_registration_path, class: "button-hover", data: { text: "SIGN-UP" } %>  <!--changed text from sign-up to pre-register in two spots -->
+  
   </div>
 </div>
 
 <div>
+  <!-- ADDED FLASH NOTIFICATION FOR PREREGISTRATION -->
+<% if user_signed_in? %>
+  <div id="tempflash">
+    <%= flash[:notice] = "Succesfully registered. You will be notified via email when the app is live. Thanks for your support! - The Re-Up Team" %>
+  </div>
+<% end %>
+</div>
+
+<!-- INSTRUCTION DIV COMMENTED OUT FOR PRE-REGISTRATION -->
+
+<!-- <div>
   <p class="instructions text-center">
     How <span class="cookie">CoffeeBreak</span> Works
   </p>
   <p class="instructions text-center">
     Step 1:
   </p>
-  <div class="">
-    <%= image_tag('push-logo.svg', class: "resize")  %>
+  <div class="text-center">
+    <%= image_tag('push-logo.svg', class: "")  %>
   </div>
-</div>
+</div> -->
+
+
+
+
+
+
+
+
 
  <!--  <blockquote class="text-center">
     <p>
