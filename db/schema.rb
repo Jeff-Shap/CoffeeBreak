@@ -11,92 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520202804) do
+ActiveRecord::Schema.define(version: 20150516222105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "businesses", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name"
-    t.string   "address"
-    t.string   "phone"
-  end
-
-  create_table "order_profiles", force: :cascade do |t|
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "user_id"
-    t.integer  "business_id"
-    t.string   "orderdescription"
-    t.string   "name"
-    t.integer  "product_id"
-  end
-
-  add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id", using: :btree
-  add_index "order_profiles", ["product_id"], name: "index_order_profiles_on_product_id", using: :btree
-  add_index "order_profiles", ["user_id"], name: "index_order_profiles_on_user_id", using: :btree
-
-  create_table "orders", force: :cascade do |t|
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "order_profile_id"
-    t.integer  "runner_id"
-    t.string   "status"
-  end
-
-  add_index "orders", ["order_profile_id"], name: "index_orders_on_order_profile_id", using: :btree
-  add_index "orders", ["runner_id"], name: "index_orders_on_runner_id", using: :btree
-
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.string   "size"
-    t.integer  "cost_in_pennies"
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "business_id"
-  end
-
-  add_index "products", ["business_id"], name: "index_products_on_business_id", using: :btree
-
-  create_table "runners", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name"
-    t.string   "phone"
-    t.string   "email"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.string   "username"
     t.string   "name"
     t.string   "password_digest"
     t.string   "allergy"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.integer  "order_profile_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["order_profile_id"], name: "index_users_on_order_profile_id", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  add_foreign_key "order_profiles", "businesses"
-  add_foreign_key "order_profiles", "products"
-  add_foreign_key "order_profiles", "users"
-  add_foreign_key "orders", "order_profiles"
-  add_foreign_key "orders", "runners"
-  add_foreign_key "products", "businesses"
-  add_foreign_key "users", "order_profiles"
 end
