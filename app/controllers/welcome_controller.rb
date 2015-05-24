@@ -3,4 +3,6 @@ class WelcomeController < ApplicationController
   end
   def steps
   end
+  def about_us
+  end
 end

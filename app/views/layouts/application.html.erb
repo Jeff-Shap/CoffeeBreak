@@ -28,7 +28,7 @@
     <div id="navbar" class="navbar-collapse collapse nav-pad-right controls">
       <ul class="nav navbar-nav navbar-right nav-pad-right">
       <li><%= link_to "Home", root_path, class: "" %></li>
-      <li><%= link_to "About Us", root_path, class: "" %></li>
+      <li><%= link_to "About Us", welcome_about_us_path, class: "" %></li>
         <li>
           <% if user_signed_in? %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

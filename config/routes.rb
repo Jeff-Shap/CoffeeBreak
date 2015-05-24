@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root 'welcome#index', as: "authenticated_root"
   end
 
+  get 'welcome/about_us'
   get 'receive_text/index'
   get 'twilio/sms', defaults: { format: 'twiml' }
 

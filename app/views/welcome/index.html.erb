@@ -1,7 +1,7 @@
 
 
 <div id="banner">
-  <div class="jumbotron container-fluid text-center">
+  <div class="jumbotron jumbotron-welcome container-fluid text-center">
     <h1 class="coffeebreak">
       CoffeeBreak
     </h1>
@@ -57,12 +57,14 @@
         </p>
       </div>
     </div>
+  </div>
+</div>
 
 <div>
   <!-- ADDED FLASH NOTIFICATION FOR PREREGISTRATION -->
 <% if user_signed_in? %>
   <div id="tempflash">
-    <%= flash[:notice] = "Succesfully registered. You will be notified via email when the app is live. Thanks for your support! - The Re-Up Team" %>
+    <%= flash[:notice] = "Succesfully registered. You will be notified via email when the app is live. Thanks for your support! -The Re-Up Team" %>
   </div>
 <% end %>
 </div>
