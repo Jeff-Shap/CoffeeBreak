@@ -59,6 +59,7 @@ body {
   color: #EEEEEE;
   font-size: 38px;
 }
+
 .footer {
   bottom: 0px;
   width: 100%;
@@ -93,9 +94,13 @@ body {
 }
 .notice{
   color: #c0392b;
+  position: absolute;
+  margin-top: 110px;
 }
 .alert{
   color: #c0392b;
+  position: absolute;
+  margin-top: 110px;
 }
 .button,
 [class*="button-"] {
@@ -135,3 +140,5 @@ body {
   position: absolute;
   top: -2.75em;
 }
+ul {
+  background-color: rgba(51, 51, 51, 0.5);

@@ -129,9 +129,28 @@ h1:hover {
 .jumbotron-about-us {
   background-color: #333333;
   color: #EEEEEE;
-  min-height: 900px;
+  min-height: 800px;
   background-image: url("about-banner.jpg");
   background-size: cover;
   background-attachment: fixed;
-  background-position: right top;
+  background-position: center top;
+}
+#about-us-row {
+  position: relative;
+  z-index: 300;
+}
+.lander-row-2 {
+  display: block;
+}
+#about-us-row .profile-img {
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.transparent-bg {
+  background-color: rgba(20, 20, 20, 0.5);
+  margin-top: 150px;
+
+
 }

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  match '/contacts',    to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   get "specialization_types/:specialization_type_id/specializations" => "application#specializations", :as => "specializations", :format => :json
 
   devise_for :users

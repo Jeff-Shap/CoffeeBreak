@@ -10,7 +10,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%=params[:controller]%>">
-
+<p class="notice col-xs-12 text-center"><%= notice %></p>
+<p class="alert col-xs-12 text-center"><%= alert %></p>
 
 
   <!-- Fixed navbar -->
@@ -27,25 +28,22 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse nav-pad-right controls">
       <ul class="nav navbar-nav navbar-right nav-pad-right">
-      <li><%= link_to "Home", root_path, class: "" %></li>
-      <li><%= link_to "About Us", welcome_about_us_path, class: "" %></li>
+      <li><%= link_to "Home", root_path, class: "nav-pad-right" %></li>
+      <li><%= link_to "About Us", welcome_about_us_path, class: "nav-pad-right" %></li>
         <li>
           <% if user_signed_in? %>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-pad-right" %>
          <% else %>
-            <%= link_to "Log In", new_user_session_path, class: "" %>
+            <%= link_to "Log In", new_user_session_path, class: "nav-pad-right" %>
           <% end %>
         </li>
       </ul>
     </div><!--/.nav-collapse -->
-      <p class="notice pull-right"><%= notice %></p>
-      <p class="alert pull-right"><%= alert %></p>
   </div>
 </nav>
 
-
-
 <%= yield %>
+
 
 <!--   <footer class="footer footer-inner ftr-contain">
     <div class="container">
