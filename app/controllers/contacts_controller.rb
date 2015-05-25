@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @create = Contact.new(params[:contact])
+    @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
       flash.now[:notice] = 'Message delivered'
