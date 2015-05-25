@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
+  match '/contacts',    to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   get "specialization_types/:specialization_type_id/specializations" => "application#specializations", :as => "specializations", :format => :json
 
-  get 'welcome/index'
-
-
   devise_for :users
-  get 'welcome/index'
 
-  resources :coffee_shops
   resources :order_profiles
   resources :users
 
@@ -17,10 +15,12 @@ Rails.application.routes.draw do
     root 'welcome#index', as: "authenticated_root"
   end
 
-  root 'welcome#index'
-
+  get 'welcome/about_us'
   get 'receive_text/index'
   get 'twilio/sms', defaults: { format: 'twiml' }
+
+  root 'welcome#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

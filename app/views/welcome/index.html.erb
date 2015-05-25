@@ -1,24 +1,73 @@
 
 
 <div id="banner">
-  <div class="jumbotron container-fluid text-center">
+  <div class="jumbotron jumbotron-welcome container-fluid text-center">
     <h1 class="coffeebreak">
       CoffeeBreak
     </h1>
     <p>
       Get your fix.
     </p>
-    
-    <%= link_to 'SIGN-UP', new_user_registration_path, class: "button-hover", data: { text: "SIGN-UP" } %>  <!--changed text from sign-up to pre-register in two spots -->
-  
+
+    <%= link_to 'SIGN UP', new_user_registration_path, class: "button-hover", data: { text: "SIGN UP" } %>
+
   </div>
 </div>
+
+<!-- How It Works section begins -->
+<div id="how-it-works-row" class="lander-row">
+  <div class="container">
+    <%= image_tag('reupteam.svg', class: "reup img-responsive hidden-xs pull-right")  %>
+    <div class="row">
+      <h3 class="text-center">
+        HOW IT WORKS
+      </h3>
+      <br>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="circle circle-number text-center">
+          1
+        </div>
+        <br>
+        <%= image_tag('gear.png', class: "img-responsive how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Sign up and create an order profile.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="circle circle-number text-center">2
+        </div>
+        <br>
+        <%= image_tag('logo-coffee.png', class: "img-responsive how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Push our magical coffee button!
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="circle circle-number text-center">
+          3
+        </div>
+        <br>
+        <%= image_tag('logistics.png', class: "img-responsive how-it-works-phone")  %>
+        <br>
+        <p class="text-center">
+          Your coffee shows up at your office, home, or event. You can even include tip!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- How It Works section ends -->
 
 <div>
   <!-- ADDED FLASH NOTIFICATION FOR PREREGISTRATION -->
 <% if user_signed_in? %>
   <div id="tempflash">
-    <%= flash[:notice] = "Succesfully registered. You will be notified via email when the app is live. Thanks for your support! - The Re-Up Team" %>
+    <%= flash[:notice] = "Succesfully registered. You will be notified via email when the app is live. Thanks for your support! -The Re-Up Team" %>
   </div>
 <% end %>
 </div>
@@ -34,6 +83,7 @@
   </p>
   <div class="text-center">
     <%= image_tag('push-logo.svg', class: "")  %>
+>>>>>>> a049034c4f9c1f87e6e95dab3dcd1e4d1f93c042
   </div>
 </div> -->
 

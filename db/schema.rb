@@ -13,22 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150520202804) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "businesses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
     t.string   "address"
     t.string   "phone"
-  end
-
-  create_table "coffee_shops", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "data_input_method"
-    t.string   "name"
   end
 
   create_table "order_profiles", force: :cascade do |t|
@@ -41,9 +34,9 @@ ActiveRecord::Schema.define(version: 20150520202804) do
     t.integer  "product_id"
   end
 
-  add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id"
-  add_index "order_profiles", ["product_id"], name: "index_order_profiles_on_product_id"
-  add_index "order_profiles", ["user_id"], name: "index_order_profiles_on_user_id"
+  add_index "order_profiles", ["business_id"], name: "index_order_profiles_on_business_id", using: :btree
+  add_index "order_profiles", ["product_id"], name: "index_order_profiles_on_product_id", using: :btree
+  add_index "order_profiles", ["user_id"], name: "index_order_profiles_on_user_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at",       null: false
@@ -53,8 +46,8 @@ ActiveRecord::Schema.define(version: 20150520202804) do
     t.string   "status"
   end
 
-  add_index "orders", ["order_profile_id"], name: "index_orders_on_order_profile_id"
-  add_index "orders", ["runner_id"], name: "index_orders_on_runner_id"
+  add_index "orders", ["order_profile_id"], name: "index_orders_on_order_profile_id", using: :btree
+  add_index "orders", ["runner_id"], name: "index_orders_on_runner_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -65,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150520202804) do
     t.integer  "business_id"
   end
 
-  add_index "products", ["business_id"], name: "index_products_on_business_id"
+  add_index "products", ["business_id"], name: "index_products_on_business_id", using: :btree
 
   create_table "runners", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -82,7 +75,6 @@ ActiveRecord::Schema.define(version: 20150520202804) do
     t.string   "name"
     t.string   "password_digest"
     t.string   "allergy"
-    t.integer  "order_profile_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -95,8 +87,13 @@ ActiveRecord::Schema.define(version: 20150520202804) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["order_profile_id"], name: "index_users_on_order_profile_id"
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "order_profiles", "businesses"
+  add_foreign_key "order_profiles", "products"
+  add_foreign_key "order_profiles", "users"
+  add_foreign_key "orders", "order_profiles"
+  add_foreign_key "orders", "runners"
+  add_foreign_key "products", "businesses"
 end

@@ -1,9 +1,10 @@
 .reg-form {
-  max-width: 400px;
+  max-width: 300px;
 }
 .reg-body {
   padding-top: 10vw;
   color: #EEEEEE;
+  min-height: 800px;
 }
 .signup {
   color: #fcfc95;
