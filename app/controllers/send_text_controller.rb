@@ -1,11 +1,14 @@
-# class SendTextController < ApplicationController
-#   def index
-#   end
-
-  # def send_text_message(number_to_send_to)
-  #   number_to_send_to = "9544714987"#params[:number_to_send_to]
   require 'rubygems'
   require 'twilio-ruby'
+
+class SendTextController < ApplicationController
+
+   def index
+   end
+
+  def send_text_message(number_to_send_to, runners = {})
+  #   number_to_send_to = "9544714987"#params[:number_to_send_to]
+
 
     account_sid = "ACbf9d315e805714fbda6f3bda0a472f11"
     auth_token = "55edd5e9b140e907a7b7e7b1ec4a977a"
@@ -25,5 +28,5 @@
       :body => "Test message from Coffee break!"
       )
       puts "Sent message to 'Josh'"
-#   end
-# end
+  end
+end
