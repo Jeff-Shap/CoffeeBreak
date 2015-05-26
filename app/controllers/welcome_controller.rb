@@ -4,5 +4,6 @@ class WelcomeController < ApplicationController
   def steps
   end
   def about_us
+    @contact = Contact.new
   end
 end
