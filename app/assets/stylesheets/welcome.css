@@ -151,6 +151,7 @@ h1:hover {
 .transparent-bg {
   background-color: rgba(20, 20, 20, 0.5);
   margin-top: 150px;
-
-
+}
+#banner a:link {
+  text-decoration: none;
 }
