@@ -4,6 +4,9 @@ body {
 blockquote p {
   color: #fcfc95;
 }
+svg {
+  max-width: 335px;
+}
 .divider{
   border-top: 1px solid #333333;
   max-width: 420px;
