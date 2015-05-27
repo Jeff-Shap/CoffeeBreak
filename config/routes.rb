@@ -14,15 +14,16 @@ Rails.application.routes.draw do
 
   authenticated :user do
     ##REROUTED ROOT FROM 'USER#INDEX' FOR PRE-REGISTERATION
-    root 'welcome#index', as: "authenticated_root"
+    root 'home#index', as: "authenticated_root"
   end
 
   get 'welcome/about_us'
-  get 'send_text/index', to: 'send_text#index'
   get 'twilio/sms', defaults: { format: 'twiml' }
 
+  post 'get_coffee' => 'home#get_coffee', as: :get_coffee
 
   root 'welcome#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,15 +1,8 @@
-  # require 'rubygems'
-  # require 'twilio-ruby'
-
-class SendTextController < ApplicationController
-
-
-  def send_text_message(number_to_send_to) #, orderdesciption)
-    #number_to_send_to = "9544714987"#params[:number_to_send_to]
-    #orderdesciption
-    runner = Runner.get_runner
-
-    number_to_send_to = runner.number
+class TwilioClient
+    def self.send_text_message
+    runner = Runner.all.sample
+    !runner ? (return 'No runner\'s avaliable' ) : nil
+    number_to_send_to = runner.phone
 
     account_sid = "ACbf9d315e805714fbda6f3bda0a472f11"
     auth_token = "55edd5e9b140e907a7b7e7b1ec4a977a"
@@ -24,7 +17,4 @@ class SendTextController < ApplicationController
       )
       puts "Sent message to #{runner.name}"
   end
-
 end
-
-
