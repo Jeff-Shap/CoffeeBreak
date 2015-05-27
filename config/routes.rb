@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'receive_text/index'
   get 'twilio/sms', defaults: { format: 'twiml' }
 
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
