@@ -1,15 +1,12 @@
-  require 'rubygems'
-  require 'twilio-ruby'
+  # require 'rubygems'
+  # require 'twilio-ruby'
 
 class SendTextController < ApplicationController
 
-  def initialize(verif_message)
-    @verif_message = verif_message
-  end
-
   def send_text_message(number_to_send_to) #, orderdesciption)
     #number_to_send_to = "9544714987"#params[:number_to_send_to]
-    #orderdesciption =
+    #orderdesciption
+    # => number_to_send_to = @runners.values.sample
 
     account_sid = "ACbf9d315e805714fbda6f3bda0a472f11"
     auth_token = "55edd5e9b140e907a7b7e7b1ec4a977a"
@@ -22,12 +19,9 @@ class SendTextController < ApplicationController
       :to => "+1#{number_to_send_to}",
       :body => "Test message from Coffee break!"
       )
-      @verif_message = "Sent message to #{@runners.keys.sample.to_str}!"
-  end
-
-  def index
-    number_to_send_to = @runners.values.sample
-    send_text_message(number_to_send_to)
+      puts "Sent message to #{@runners.keys.sample.to_str}!"
   end
 
 end
+
+
