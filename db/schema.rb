@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 20150527072149) do
   end
 
   create_table "order_profiles", force: :cascade do |t|
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.string   "orderdescription"
     t.string   "name"
     t.integer  "product_id"
   end
