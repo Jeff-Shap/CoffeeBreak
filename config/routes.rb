@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   get 'welcome/about_us'
-  get 'receive_text/index'
+  get 'send_text/index', to: 'send_text#index'
   get 'twilio/sms', defaults: { format: 'twiml' }
 
   root 'welcome#index'

@@ -3,12 +3,13 @@
 
 class SendTextController < ApplicationController
 
-   def index
-   end
+  def initialize(verif_message)
+    @verif_message = verif_message
+  end
 
-  def send_text_message(number_to_send_to, runners = {})
-  #   number_to_send_to = "9544714987"#params[:number_to_send_to]
-
+  def send_text_message(number_to_send_to) #, orderdesciption)
+    #number_to_send_to = "9544714987"#params[:number_to_send_to]
+    #orderdesciption =
 
     account_sid = "ACbf9d315e805714fbda6f3bda0a472f11"
     auth_token = "55edd5e9b140e907a7b7e7b1ec4a977a"
@@ -16,17 +17,17 @@ class SendTextController < ApplicationController
 
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token
 
-
-    # firends {'+19415041055' => 'Jeff',
-    #   '+19544714987' => 'Maximo',
-    #   '+13058048507' => 'Josh'}
-
-
       @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
-      :to => '+13058048507',
+      :to => "+1#{number_to_send_to}",
       :body => "Test message from Coffee break!"
       )
-      puts "Sent message to 'Josh'"
+      @verif_message = "Sent message to #{@runners.keys.sample.to_str}!"
   end
+
+  def index
+    number_to_send_to = @runners.values.sample
+    send_text_message(number_to_send_to)
+  end
+
 end
