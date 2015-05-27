@@ -4,14 +4,11 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="420.5px" height="233px" viewBox="179.5 241.5 420.5 233" enable-background="new 179.5 241.5 420.5 233"
 	 xml:space="preserve">
+
 <defs>
-  <style type="text/css">
-    @font-face {
-      font-family: Cookie;
-      src: url('http://fonts.gstatic.com/s/cookie/v7/5eiDWXYu_7xmow8ddgvSIOvvDin1pK8aKteLpeZ5c0A.woff2');
-    }
-  </style>
+  <style type="text/css">@import url(http://fonts.googleapis.com/css?family=Cookie);</style>
 </defs>
+
 <text transform="matrix(1 0 0 1 352.1768 306.8721)" fill="#EEEEEE" font-family="Cookie" font-size="78.7493">The</text>
 <text transform="matrix(1 0 0 1 194.6333 393.2773)" fill="#EEEEEE" font-family="Cookie" font-size="214.4175">R</text>
 <text transform="matrix(1 0 0 1 319.8525 393.2773)" fill="#EEEEEE" font-family="Cookie" font-size="214.4175" letter-spacing="12">e</text>
