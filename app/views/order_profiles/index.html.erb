@@ -8,14 +8,13 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-<tr>
+  <tbody>
+      <tr>
         <td>Name</td>
         <td>Product</td>
         <td>Business</td>
         <td></td>
       </tr>
-  <tbody>
     <% @order_profiles.each do |order_profile| %>
       <tr>
         <td><%= order_profile.name %></td>
@@ -29,6 +28,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Order profile', new_order_profile_path %>
+<%= link_to 'New Order Profile', new_order_profile_path %>
