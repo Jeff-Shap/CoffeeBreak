@@ -1,6 +1,5 @@
 class OrderProfile < ActiveRecord::Base
-  has_many :orders
-  belongs_to :business
   belongs_to :user
-  has_one :product, through: :business
+  belongs_to :product
+  has_one :business, through: :product
 end

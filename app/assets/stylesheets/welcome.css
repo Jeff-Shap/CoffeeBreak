@@ -121,9 +121,6 @@ h1:hover {
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(20, 20, 20, 0.5);
-  padding-left: 100px;
-  padding-right: 100px;
 
 }
 .jumbotron-about-us {
@@ -150,7 +147,40 @@ h1:hover {
 }
 .transparent-bg {
   background-color: rgba(20, 20, 20, 0.5);
-  margin-top: 150px;
-
-
+  margin-top: 40px;
+}
+#banner a:link {
+  text-decoration: none;
+}
+.description {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: .8;
+  font-size: 28px;
+  max-width: 500px;
+}
+.wyncode {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 5em;
+  text-align: center;
+  background-image: url(wyncode.jpg);
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgba(0,0,0,0);
+}
+.resize-big {
+  transform: scale(0.6, 0.6);
+  -ms-transform: scale(0.6, 0.6);
+  -webkit-transform: scale(0.6, 0.6);
+}
+.divider-top {
+  margin-top: 40px;
+}
+.bottom-buffer{
+  margin-bottom: 40px;
 }
