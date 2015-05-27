@@ -178,3 +178,9 @@ h1:hover {
   -ms-transform: scale(0.6, 0.6);
   -webkit-transform: scale(0.6, 0.6);
 }
+.divider-top {
+  margin-top: 40px;
+}
+.bottom-buffer{
+  margin-bottom: 40px;
+}
