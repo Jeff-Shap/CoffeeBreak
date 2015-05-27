@@ -57,11 +57,4 @@ group :development, :test do
   gem 'spring'
 end
 
-
-
-
-group :assets do
-  gem 'compass-rails'
-end
-
   gem 'twilio-ruby'
