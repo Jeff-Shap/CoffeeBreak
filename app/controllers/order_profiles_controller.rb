@@ -109,7 +109,7 @@ class OrderProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_profile_params
-      params[:order_profile].permit(:name, :product_id)
+      params[:order_profile].permit(:name, :product_id, :address_for_delivery, :phone)
 
     end
 end
