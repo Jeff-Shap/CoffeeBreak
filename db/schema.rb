@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526235633) do
+ActiveRecord::Schema.define(version: 20150527002334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,9 +71,6 @@ ActiveRecord::Schema.define(version: 20150526235633) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "username"
-    t.string   "name"
-    t.string   "password_digest"
     t.string   "allergy"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -85,11 +82,9 @@ ActiveRecord::Schema.define(version: 20150526235633) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "order_profile_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["order_profile_id"], name: "index_users_on_order_profile_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "order_profiles", "businesses"
@@ -98,5 +93,4 @@ ActiveRecord::Schema.define(version: 20150526235633) do
   add_foreign_key "orders", "order_profiles"
   add_foreign_key "orders", "runners"
   add_foreign_key "products", "businesses"
-  add_foreign_key "users", "order_profiles"
 end
