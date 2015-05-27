@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   match '/contacts',    to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
 
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   get 'welcome/about_us'
   get 'send_text/index', to: 'send_text#index'
   get 'twilio/sms', defaults: { format: 'twiml' }
+
 
   root 'welcome#index'
 
