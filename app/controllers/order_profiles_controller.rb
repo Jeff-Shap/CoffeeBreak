@@ -1,6 +1,6 @@
 class OrderProfilesController < ApplicationController
   before_action :set_order_profile, only: [:show, :edit, :update, :destroy]
-
+  respond_to :json
   # GET /order_profiles
   # GET /order_profiles.json
 
@@ -16,30 +16,31 @@ class OrderProfilesController < ApplicationController
   # GET /order_profiles/new
   def new
 
-    @business_names = []
-    Business.find_each do |b|
-      @business_names << [b.name, b.id]
-    end
+    # @business_names = []
+    # Business.find_each do |b|
+    #   @business_names << [b.name, b.id]
+    # end
 
-    @business_json=[]
-    Business.find_each do |b|
-      @business_json << b.to_json
-    end
+    # @business_json=[]
+    # Business.find_each do |b|
+    #   @business_json << b.to_json
+    # end
 
-    @product_names = []
-    Product.find_each do |p|
-      @product_names << [p.name, [p.id, p.business_id]]
-    end
+    # @product_names = []
+    # Product.find_each do |p|
+    #   @product_names << [p.name, [p.id, p.business_id]]
+    # end
 
-    @product_json = []
-    Product.find_each do |j|
-      @product_json << j.to_json
-    end
-
+    # @product_json = []
+    # Product.find_each do |j|
+    #   @product_json << j.to_json
+    # end
 
     @order_profile = OrderProfile.new
-    
 
+    @businesses = Business.find_each.as_json
+    @products = Product.find_each.as_json
+    
   end
 
   # GET /order_profiles/1/edit
@@ -108,7 +109,7 @@ class OrderProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_profile_params
-      params[:order_profile].permit(:orderdescription, :name, :business, :business_id)
+      params[:order_profile].permit(:name, :product_id, :address_for_delivery, :phone)
 
     end
 end
