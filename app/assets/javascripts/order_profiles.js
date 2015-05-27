@@ -38,11 +38,9 @@
 var main = function(){
 
   $('.selected_product').click(function(){
-
-    var printMe = $(this).next().val();
-
-    console.log(printMe);
-
+    selected_prod_id = $(this).parent().next().text();
+    console.log(selected_prod_id);
+    $('#test').val(selected_prod_id);
   })
 
 };
