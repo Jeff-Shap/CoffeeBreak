@@ -9,11 +9,11 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b79c7b', endColorstr='#877464', GradientType=0 );
 }
 #tempflash {
-  width: 75%;
+  width: 65%;
   margin: auto;
   text-align: center;
   position: relative;
-  bottom: 650px;
+  bottom: 1000px;
   background: transparent;
   color: #fcfc95;
   font-size: 1em;
@@ -28,7 +28,7 @@ body {
 }
 @media screen and (min-width: 800px) {
   #tempflash {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 @media screen and (max-width: 460px) {
