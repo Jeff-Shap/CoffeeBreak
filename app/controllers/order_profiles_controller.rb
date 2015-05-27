@@ -21,6 +21,11 @@ class OrderProfilesController < ApplicationController
       @business_names << [b.name, b.id]
     end
 
+    @business_json=[]
+    Business.find_each do |b|
+      @business_json << b.to_json
+    end
+
     @product_names = []
     Product.find_each do |p|
       @product_names << [p.name, [p.id, p.business_id]]
@@ -39,6 +44,14 @@ class OrderProfilesController < ApplicationController
 
   # GET /order_profiles/1/edit
   def edit
+    @business_names = []
+    Business.find_each do |b|
+      @business_names << [b.name, b.id]
+    end
+    @product_names = []
+    Product.find_each do |p|
+      @product_names << [p.name, [p.id, p.business_id]]
+    end
   end
 
   # POST /order_profiles

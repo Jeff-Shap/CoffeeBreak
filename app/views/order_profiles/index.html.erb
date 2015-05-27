@@ -19,8 +19,8 @@
     <% @order_profiles.each do |order_profile| %>
       <tr>
         <td><%= order_profile.name %></td>
-        <td><%= order_profile.product.name %></td>
-        <td><%= order_profile.business.name %></td>
+        <td><%= order_profile.product.try(:name) %></td>
+        <td><%= order_profile.business.try(:name) %></td>
         <td><%= link_to 'Show', order_profile %></td>
         <td><%= link_to 'Edit', edit_order_profile_path(order_profile) %></td>
         <td><%= link_to 'Destroy', order_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
