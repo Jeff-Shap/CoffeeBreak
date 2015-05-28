@@ -1,7 +1,7 @@
 <div id="home">
   <div class="overflowin">
     <div align="center" class="container">
-      <%= link_to get_coffee_path, method: :POST do %>
+      <%= link_to submit_order_path, method: :POST do %>
       <%= image_tag('button-logo.svg', class: "order-btn") %>
         <% end %>
     </div>
@@ -24,12 +24,6 @@
     <p id="notice"><%= notice %></p>
   </div>
 
-
-  <!-- ADDED FOR DEBUGGING WHILE CREATING ORDER MODEL -->
-  <p>FOR REFERENCES (REMOVE FOR PRODUCTION)
-  <br><span> Order: </span><%= @order %>
-  <br><span> Order JSON: </span><%= @order_json %>
-  </p>
 
 
 </div>

@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create(profile_id)
-    @order = Order.new(order_params)
+    @order = Order.new
 
     respond_to do |format|
       if @order.save
@@ -27,7 +27,6 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params[:order].permit(:order_profile_id)
-
     end
 
 

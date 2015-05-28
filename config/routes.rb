@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   post 'get_coffee' => 'home#get_coffee', as: :get_coffee
 
+  post 'submit_order' => 'home#submit_order', as: :submit_order
+
   root 'welcome#index'
 
 
