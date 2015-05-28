@@ -5,7 +5,7 @@ class TwilioClient
     number_to_send_to = runner.phone
 
     account_sid = "ACbf9d315e805714fbda6f3bda0a472f11"
-    auth_token = "55edd5e9b140e907a7b7e7b1ec4a977a"
+    auth_token = "d0c4d21cfc4831bb5d9dae9251c6d8ed"
     twilio_phone_number = "3059281286"
 
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token
