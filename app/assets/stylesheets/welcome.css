@@ -5,7 +5,12 @@ blockquote p {
   color: #fcfc95;
 }
 svg {
-  max-width: 335px;
+  max-width: 100%;
+  height: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 .divider{
   border-top: 1px solid #333333;
