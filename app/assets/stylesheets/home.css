@@ -16,6 +16,7 @@
 }
 .visibleiphone5 {
   display:none;
+
 }
 .visibledesktop {
   display:display;
@@ -26,8 +27,8 @@
 @media (max-width : 375px) {
   .visibleiphone5 {
     display:block;
-    margin-left: -40px;
-    max-width: 400px;
+    max-width:100%;
+    height:auto;
   }
   .visibledesktop {
     display:none;
