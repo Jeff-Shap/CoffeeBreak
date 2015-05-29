@@ -20,8 +20,8 @@
     <p id="notice"><%= notice %></p>
   </div>
   </div>
-  <%= f.input :order_profile_id, :input_html => {:id => "selected_profile_id", :value => ""} %>
+  <%= f.input :order_profile_id, :input_html => {:id => "selected_profile_id", :value => "", :style => "visibility:hidden"} %>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit %>
   </div>
 <% end %>
