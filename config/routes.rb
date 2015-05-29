@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :orders
   get 'home/index'
 
   match '/contacts',    to: 'contacts#new', via: 'get'
@@ -14,13 +15,15 @@ Rails.application.routes.draw do
 
   authenticated :user do
     ##REROUTED ROOT FROM 'USER#INDEX' FOR PRE-REGISTERATION
-    root 'home#index', as: "authenticated_root"
+    root 'orders#new', as: "authenticated_root"
   end
 
   get 'welcome/about_us'
   get 'twilio/sms', defaults: { format: 'twiml' }
 
   post 'get_coffee' => 'home#get_coffee', as: :get_coffee
+
+  post 'submit_order' => 'home#submit_order', as: :submit_order
 
   root 'welcome#index'
 

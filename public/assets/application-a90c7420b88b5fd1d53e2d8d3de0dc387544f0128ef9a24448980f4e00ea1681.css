@@ -10,8 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
+
  */
+
 
 @import 'global.css';
 @import 'welcome.css';
@@ -19,4 +20,3 @@
 @import 'contact.css';
 @import 'users.css';
 @import 'home.css';
-@import 'orders.css'
