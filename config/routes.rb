@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :orders
   get 'home/index'
 
   match '/contacts',    to: 'contacts#new', via: 'get'
