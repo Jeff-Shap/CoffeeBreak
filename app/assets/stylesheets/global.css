@@ -82,9 +82,6 @@ body {
 .navbar-default{
   border: none;
 }
-.navbar-right {
-  margin-right: -150px;
-}
 .nav-pad-right{
   text-transform: uppercase;
 }
