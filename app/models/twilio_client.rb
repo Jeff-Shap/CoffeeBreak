@@ -1,6 +1,5 @@
 class TwilioClient
-  def self.send_text_message
-    def self.send_text_message(order)
+  def self.send_text_message(order)
     runner = Runner.all.sample
     !runner ? (return 'No runner\'s avaliable' ) : nil
     number_to_send_to = runner.phone
@@ -17,5 +16,4 @@ class TwilioClient
       )
       puts "Sent message to #{runner.name}"
   end
-
 end
