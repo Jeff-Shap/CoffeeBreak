@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     ##REROUTED ROOT FROM 'USER#INDEX' FOR PRE-REGISTERATION
-    root 'home#index', as: "authenticated_root"
+    root 'orders#new', as: "authenticated_root"
   end
 
   get 'welcome/about_us'
