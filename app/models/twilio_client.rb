@@ -11,10 +11,10 @@ class TwilioClient
     end
 
     if Rails.env.test? || Rails.env.development?
-    account_sid = "AC9d4c46c95f181d6e03c1a89fca868bc3"
-  else
-    account_sid = ENV["ACCOUNT_SID"]
-  end
+      account_sid = "AC9d4c46c95f181d6e03c1a89fca868bc3"
+    else
+      account_sid = ENV["ACCOUNT_SID"]
+    end
 
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token
       @twilio_client.account.sms.messages.create(
