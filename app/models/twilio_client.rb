@@ -5,7 +5,7 @@ class TwilioClient
     number_to_send_to = runner.phone
 
     if Rails.env.test? || Rails.env.development?
-      auth_token="24ebb9f3adf36915a46f7ff26e7d1fa9"
+      auth_token="83f89618e1c835b7e6602c1b260507c4"
     else
       auth_token=ENV["AUTH_TOKEN"]
     end
