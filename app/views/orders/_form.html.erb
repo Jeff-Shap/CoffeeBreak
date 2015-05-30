@@ -5,12 +5,15 @@
     <div align="center">
     <div class="container">
         <%= f.input :order_profile_id, :input_html => {:id => "selected_profile_id", :value => "", :class => "hidden"} %>
+      <!-- big button logo begins -->
       <div class="form-actions">
         <%= image_submit_tag("button-logo.svg", class: "") %>
       </div>
+      <!-- big button logo ends -->
       <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Order Profiles
-        <span class="caret"></span></button>
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+          Order Profiles<span class="caret"></span>
+        </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
           <% @order_profiles.each do |o| %>
           <li class="profile_options">

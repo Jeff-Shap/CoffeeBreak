@@ -1,63 +1,63 @@
-<%= simple_form_for(@order_profile) do |f| %>
-  <% if @order_profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order_profile.errors.count, "error") %> prohibited this order_profile from being saved:</h2>
+<div class="text-center">
+  <%= simple_form_for(@order_profile) do |f| %>
+    <% if @order_profile.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@order_profile.errors.count, "error") %> prohibited this order_profile from being saved:</h2>
 
-      <ul>
-      <% @order_profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <%= f.input :name %>
-  <%= f.input :phone %>
-  <%= f.input :address_for_delivery %>
+        <ul>
+        <% @order_profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.input :name %>
+    <%= f.input :phone %>
+    <%= f.input :address_for_delivery %>
 
 
-<div>
-  <% @businesses.each do |b| %>
-  <table class="table table=striped table-bordered">
-    <tbody>
-      <tr class="rowlink">
-        <td>
-          <div class="dropdown">
-            <a class="dropdown-toggle rowling" data-toggle="dropdown" href="#">
-              <%=b['name']%>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria=labelledby="dLabel">
-              <% @products.each do |p| %>
-              <% if p['business_id'] == b['id'] %>
-              <li>
-                <a class="selected_product" tabindex="-1" href="#">
-                  <%= p['name'] %>
-                </a>
-              </li>
-              <li style="visibility:hidden"><%= p['id'] %></li>
+  <div>
+    <% @businesses.each do |b| %>
+    <table class="table table=striped table-bordered">
+      <tbody>
+        <tr class="rowlink">
+          <td>
+            <div class="dropdown">
+              <a class="dropdown-toggle rowling" data-toggle="dropdown" href="#">
+                <%=b['name']%>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria=labelledby="dLabel">
+                <% @products.each do |p| %>
+                <% if p['business_id'] == b['id'] %>
+                <li>
+                  <a class="selected_product" tabindex="-1" href="#">
+                    <%= p['name'] %>
+                    <%= p['cost_in_pennies'] %>
+                  </a>
+                </li>
+                <li style="visibility:hidden"><%= p['id'] %></li>
+                <%end%>
               <%end%>
-            <%end%>
-            </ul>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <%end%>
-</div>
-
-
-
-<%= f.input :product_id, :as => :hidden, :input_html => { :id => "test", :value => ""}%>
-
-
-
-
- <div class="actions">
-    <%= f.submit %>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
   </div>
 
-<% end %>
+
+
+  <%= f.input :product_id, :as => :hidden, :input_html => { :id => "test", :value => ""}%>
 
 
 
+
+   <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+</div>

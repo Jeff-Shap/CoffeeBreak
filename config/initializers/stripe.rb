@@ -5,5 +5,5 @@
 
 # Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
-Stripe.api_key = secret_key
-STRIPE_PUBLIC_KEY = public_key
+# Stripe.api_key = secret_key
+# STRIPE_PUBLIC_KEY = public_key
