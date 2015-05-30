@@ -1,4 +1,4 @@
-<%= simple_form_for(@order) do |f| %>
+<%= simple_form_for @order, html: { id: :orderform } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -7,7 +7,31 @@
         <%= f.input :order_profile_id, :input_html => {:id => "selected_profile_id", :value => "", :class => "hidden"} %>
       <!-- big button logo begins -->
       <div class="form-actions">
-        <%= image_submit_tag("button-logo.svg", class: "") %>
+
+        <%= image_submit_tag("button-logo.svg", class: "bigbutton", id: "submitorder") do %>
+          <script src="https://checkout.stripe.com/checkout.js"></script>
+          = heidden_field_tag 'stripeToken'
+          = hiddne_field_tag 'stripeEmail'
+          <script type="text/javascript">
+          // var handler = StripeCheckout.configure({
+          //   key: '<%= ENV["PUBLISHABLE_KEY"] %>',
+          //   token: function(token, args) {
+          //     document.getElementById("stripeToken").value = token.id;
+          //     document.getElementById("stripeEmail").value = token.email;
+          //   }
+          // });
+
+          document.getElementById('submitorder').addEventListener('click', function(e){
+            handler.open({
+              name: 'CoffeeBreak',
+              description: 'coffee delivery',
+              amount: '100',
+            });
+            e.preventDefault();
+          });
+          </script>
+          <% end %>
+
       </div>
       <!-- big button logo ends -->
       <div class="dropdown">

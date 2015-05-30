@@ -146,3 +146,11 @@ body {
 .hidden {
   display: hidden;
 }
+.bigbutton {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.viewheight {
+  height:99vh;
+}
