@@ -7,7 +7,8 @@
         <%= f.input :order_profile_id, :input_html => {:id => "selected_profile_id", :value => "", :class => "hidden"} %>
       <!-- big button logo begins -->
       <div class="form-actions">
-        <%= image_submit_tag("button-logo.svg", class: "", id: "submitorder") do %>
+
+        <%= image_submit_tag("button-logo.svg", class: "bigbutton", id: "submitorder") do %>
           <script src="https://checkout.stripe.com/checkout.js"></script>
           = heidden_field_tag 'stripeToken'
           = hiddne_field_tag 'stripeEmail'
@@ -30,6 +31,7 @@
           });
           </script>
           <% end %>
+
       </div>
       <!-- big button logo ends -->
       <div class="dropdown">
