@@ -40,8 +40,12 @@ class OrderProfilesController < ApplicationController
 
     @businesses = Business.find_each.as_json
     @products = Product.find_each.as_json
+
     
-  end
+    end
+
+
+
 
   # GET /order_profiles/1/edit
   def edit
