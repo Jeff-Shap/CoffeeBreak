@@ -33,7 +33,18 @@
                 <li>
                   <a class="selected_product" tabindex="-1" href="#">
                     <%= p['name'] %>
-                    <%= p['cost_in_pennies'] %>
+
+
+
+
+                    <!-- this div is the $cost in order profile form and needs to be spaced -->
+                    <div>   
+                    <%= "$" %>
+                    <%= number_with_precision(((p['cost_in_pennies'].to_i)/100.0), :precision => 2) %>
+                    </div>
+
+                    <!-- end div for spacing -->
+
                   </a>
                 </li>
                 <li style="visibility:hidden"><%= p['id'] %></li>
