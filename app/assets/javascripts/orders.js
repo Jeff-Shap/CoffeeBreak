@@ -6,11 +6,9 @@ var main = function(){
 
   $('.profile_options').click(function(){
     selected_prof= $(this).next().text();
-    console.log(selected_prof);
     selected_prof2 = parseInt(selected_prof);
-    console.log(selected_prof2)
     $('#selected_profile_id').val(selected_prof2);
-  })
+  });
 
 };
 
