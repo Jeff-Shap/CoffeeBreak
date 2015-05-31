@@ -26,7 +26,7 @@ body {
   width: 2px;
   position: absolute;
   left: 50%;
-  top: -16px;
+  top: 35px;
   z-index: 1;
 }
 .pin:after {
@@ -71,7 +71,8 @@ body {
   color: #333;
   position: relative;
   width: 300px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   font-family: Raleway;
   font-size: 30px;
