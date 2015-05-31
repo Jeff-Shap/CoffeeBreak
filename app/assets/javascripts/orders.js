@@ -17,7 +17,7 @@ var handler = StripeCheckout.configure({
     }
   });
 
-  $('#submitorder').click(function(e){
+  $('#sendorder').click(function(e){
     console.log('clicked submit');
       handler.open({
       name: 'CoffeeBreak',
