@@ -2,8 +2,8 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 .parallax-window {
-    min-height: 400px;
-    background: transparent;
+  min-height: 400px;
+  background: transparent;
 }
 .quote-container {
   position: relative;
