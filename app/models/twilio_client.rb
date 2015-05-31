@@ -16,9 +16,16 @@ class TwilioClient
       account_sid = ENV["ACCOUNT_SID"]
     end
 
+    if Rails.env.test? || Rails.env.development?
+      twilio_num = "3054400524"
+    else
+      twilio_num = ENV['TWILIO_NUM']
+    end
+
+
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token
       @twilio_client.account.sms.messages.create(
-      :from => "+1#{ENV['TWILIO_NUM']}",
+      :from => "+1#{twilio_num}",
       :to => "+1#{number_to_send_to}",
       :body => order
       )
