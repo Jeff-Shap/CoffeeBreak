@@ -29,7 +29,20 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        TwilioClient.send_text_message('test')
+
+        if Rails.env.test? || Rails.env.development?
+          twilio_num = "7862071900"
+        else
+          twilio_num = ENV['TWILIO_NUM']
+        end
+
+        @client = Twilio::REST::Client.new
+        @client.account.messages.create({
+          :from => "+1#{twilio_num}",
+          :to => '3058048507',
+          :body => 'Yo go get coffe',
+        })
+
         format.html { redirect_to root_path, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
