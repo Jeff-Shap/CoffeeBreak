@@ -16,4 +16,6 @@
 !/log/.keep
 /tmp
 .DS_store
-Icon
+Icon
+
+.env
