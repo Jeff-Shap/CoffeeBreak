@@ -5,7 +5,7 @@ class OrderProfilesController < ApplicationController
   # GET /order_profiles.json
 
   def index
-    @order_profiles = OrderProfile.all
+    @order_profiles = current_user.order_profiles.all
   end
 
   # GET /order_profiles/1
@@ -36,12 +36,12 @@ class OrderProfilesController < ApplicationController
     #   @product_json << j.to_json
     # end
 
-    @order_profile = OrderProfile.new
+    @order_profile = current_user.order_profiles.build
 
     @businesses = Business.find_each.as_json
     @products = Product.find_each.as_json
 
-    
+
     end
 
 
@@ -62,8 +62,8 @@ class OrderProfilesController < ApplicationController
   # POST /order_profiles
   # POST /order_profiles.json
   def create
- 
-    @order_profile = OrderProfile.new(order_profile_params)
+
+    @order_profile = current_user.order_profiles.build(order_profile_params)
 
 
     respond_to do |format|
@@ -108,7 +108,7 @@ class OrderProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order_profile
-      @order_profile = OrderProfile.find(params[:id])
+      @order_profile = current_user.order_profiles.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

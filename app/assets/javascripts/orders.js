@@ -4,16 +4,12 @@
 
 var main = function(){
 
-  $.getScript("https://checkout.stripe.com/checkout.js", function(){
-
-   alert("Script loaded and executed.");
-
-
 var handler = StripeCheckout.configure({
     key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
     token: function(token) {
-    $('#stripeToken').value = token.id;
-    $('.stripeEmail').value = token.email;
+    $('#stripeToken').val(token.id);
+    $('.stripeEmail').val(token.email);
+    $('#orderform').submit();
     }
   });
 
@@ -27,24 +23,24 @@ var handler = StripeCheckout.configure({
     e.preventDefault();
   });
 
+  $(window).on('popstate', function() {
+    handler.close();
+    });
+
+  window.addEventListener('popstate', function(){
+    handler.close();
+    });
 
 
-  });
 
-  $('.profile_options').click(function(){
-    selected_prof= $(this).next().text();
-    selected_prof2 = parseInt(selected_prof);
-    $('#selected_profile_id').val(selected_prof2);
-  });
 
   // $('.form-actions').click(function() {
   //   console.log('click');
 
   // });
+  ;
 
-  
 
 
 };
-
 $(document).ready(main);

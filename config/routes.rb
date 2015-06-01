@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :charges
+
   resources :order_profiles
   resources :users
 

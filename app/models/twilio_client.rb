@@ -5,7 +5,7 @@ class TwilioClient
     number_to_send_to = runner.phone
 
     if Rails.env.test? || Rails.env.development?
-      auth_token="83f89618e1c835b7e6602c1b260507c4"
+      auth_token = "83f89618e1c835b7e6602c1b260507c4"
     else
       auth_token=ENV["AUTH_TOKEN"]
     end
@@ -27,7 +27,7 @@ class TwilioClient
       @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_num}",
       :to => "+1#{number_to_send_to}",
-      :body => order
+      :body => "test"
       )
       puts "Sent message to #{runner.name}"
   end

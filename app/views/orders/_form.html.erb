@@ -1,13 +1,16 @@
 <%= simple_form_for @order, html: { id: :orderform } do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
+  <%= hidden_field_tag(:stripeToken) %>
+  <%= hidden_field_tag(:stripeEmail) %>
     <div align="center">
     <div class="container">
         <%= f.input :order_profile_id, :input_html => {:id => "selected_profile_id", :value => "", :class => "hidden"} %>
       <!-- big button logo begins -->
       <div class="form-actions" id="submitorder">
         <%= image_submit_tag("button-logo.svg", class: "bigbutton", id: "submitorder") %>
+        <script type="text/javascript" src="orders.js"></script>
+        <script type="text/javascript" src="https://checkout.stripe.com/checkout.js"></script>
       </div>
       <!-- big button logo ends -->
       <div class="dropdown">
