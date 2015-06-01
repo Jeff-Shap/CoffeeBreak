@@ -27,9 +27,9 @@ var handler = StripeCheckout.configure({
     handler.close();
     });
 
-  window.addEventListener('popstate', function(){
-    handler.close();
-    });
+  // window.addEventListener('popstate', function(){
+  //   handler.close();
+  //   });
 
 
 
