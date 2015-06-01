@@ -58,6 +58,8 @@ group :development, :test do
   gem 'spring'
 
   gem 'dotenv-rails'
+
+  gem 'thin'
 end
 
   gem 'twilio-ruby'
